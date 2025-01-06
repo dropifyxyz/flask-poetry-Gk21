@@ -8,6 +8,6 @@ poetry run playwright install-deps
 
 [deploy]
 startCommand = "poetry run gunicorn wsgi:app"
-healthcheckPath = "/"
+healthcheckPath = "/health"
 healthcheckTimeout = 100
 restartPolicyType = "never"
