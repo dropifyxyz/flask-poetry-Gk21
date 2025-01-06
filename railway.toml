@@ -1,6 +1,10 @@
 [build]
 builder = "nixpacks"
-buildCommand = "poetry install"
+buildCommand = """
+poetry install
+poetry run playwright install
+poetry run playwright install-deps
+"""
 
 [deploy]
 startCommand = "poetry run gunicorn wsgi:app"

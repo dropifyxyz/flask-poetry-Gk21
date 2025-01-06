@@ -5,5 +5,7 @@ COPY . /app
 
 RUN pip install poetry
 RUN poetry install
+RUN poetry run playwright install
+RUN poetry run playwright install-deps
 
 CMD ["sleep", "5", ";", "poetry", "run", "gunicorn", "wsgi:app"]
