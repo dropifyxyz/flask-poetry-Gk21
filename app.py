@@ -5,6 +5,10 @@ import subprocess
 
 app = Flask(__name__)
 
+@app.route('/health')
+async def health_check():
+    return jsonify({ 'status': 'healthy' }), 200
+
 @app.route('/')
 async def run_dendrite_auth():
     try:
