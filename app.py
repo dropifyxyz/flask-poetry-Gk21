@@ -15,7 +15,7 @@ def run_dendrite_auth():
         )
         stdout, stderr = process.communicate()
 
-        browser = Dendrite(auth="linkedin.com")
+        browser = Dendrite(auth=["facebook.com", "instagram.com", "tiktok.com", "youtube.com", "linkedin.com"], dendrite_api_key="sk_d6aacf77ee8acba13ce14c8da02e1c7f22e7c9b83451ffb80ed7b2a9b5f97028", playwright_options={ "headless": True})
 
         browser.goto(
             "https://linkedin.com",
