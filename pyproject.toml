@@ -10,6 +10,7 @@ package-mode = false
 python = "^3.11"
 flask = "^3.0.3"
 gunicorn = "^22.0.0"
+dendrite-sdk = "^0.2.2"
 
 [build-system]
 requires = ["poetry-core"]
