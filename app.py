@@ -12,13 +12,13 @@ async def health_check():
 @app.route('/')
 async def run_dendrite_auth():
     try:
-        browser = AsyncDendrite(auth=["youtube.com"], dendrite_api_key=os.getenv("DENDRITE_API_KEY"), playwright_options={ "headless": True})
+        browser = AsyncDendrite(auth=["linkedin.com"], dendrite_api_key=os.getenv("DENDRITE_API_KEY"), playwright_options={ "headless": True})
 
         await browser.goto(
-            "https://youtube.com",
-            expected_page="You should be logged in with the youtube feed visible",
+            "https://linkedin.com",
+            expected_page="You should be logged in with the linkedin feed visible",
         )
-        desc = await browser.ask("List the recommended videos")
+        desc = await browser.ask("Get the latest post in the feed and profile views.")
         print("First post description: ", desc)
 
         await browser.close()
