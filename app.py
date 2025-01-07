@@ -12,7 +12,8 @@ async def health_check():
 @app.route('/')
 async def run_dendrite_auth():
     try:
-        browser = AsyncDendrite(auth=["linkedin.com"], dendrite_api_key=os.getenv("DENDRITE_API_KEY"), playwright_options={ "headless": True})
+        # playwright_options={ "headless": True}
+        browser = AsyncDendrite(auth=["linkedin.com"], dendrite_api_key=os.getenv("DENDRITE_API_KEY"), remote_config=BrowserbaseConfig())
 
         await browser.goto(
             "https://linkedin.com",
